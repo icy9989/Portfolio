@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ProjectCategory {
+  WEB
+  MOBILE
+  AI_ML
+  ROBOTICS
+}
+
+model Project {
+  id               String          @id @default(cuid())
+  slug             String          @unique
+
+  title            String
+  shortDescription String
+  description      String          @db.Text
+  category         ProjectCategory
+
+  technologies     String[]
+  features         String[]
+  lessonsLearned   String[]
+
+  challenge        String?         @db.Text
+  solution         String?         @db.Text
+
+  thumbnail        String?
+  images           String[]
+  videoUrl         String?
+
+  githubUrl        String?
+  liveUrl          String?
+
+  uptime           String?
+  loadTime         String?
+  performanceScore String?
+  deploymentStatus String?
+
+  featured         Boolean         @default(false)
+  published        Boolean         @default(true)
+
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+}

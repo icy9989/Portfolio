@@ -1,26 +1,318 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-editor-bg: var(--editor-bg);
+  --color-editor-header: var(--editor-header);
+  --color-editor-border: var(--editor-border);
+  --color-editor-text: var(--editor-text);
+  --color-editor-muted: var(--editor-muted);
+  --color-syntax-keyword: var(--syntax-keyword);
+  --color-syntax-property: var(--syntax-property);
+  --color-syntax-string: var(--syntax-string);
+  --color-syntax-bracket: var(--syntax-bracket);
+  --color-window-close: var(--window-close);
+  --color-window-minimize: var(--window-minimize);
+  --color-window-expand: var(--window-expand);
+
+  --font-heading: var(--font-geist-sans);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-github-border: var(--github-border);
+  --color-base: var(--background);
+  --color-surface: var(--card);
+  --color-surface-elevated: var(--secondary);
+  --color-copy-primary: var(--foreground);
+  --color-copy-secondary: var(--muted-foreground);
+  --color-surface-border: var(--border);
+  --color-brand: var(--primary);
+  --color-brand-bright: var(--brand-bright);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --skill-logo-backdrop: #FAFAFF;
+  --skill-html: #E56A43;
+  --skill-css: #38A9F0;
+  --skill-javascript: #F7DF1E;
+  --skill-typescript: #5298DB;
+  --skill-react: #61DAFB;
+  --skill-node: #68B957;
+  --skill-python: #579BD0;
+  --skill-postgresql: #699EC6;
+  --skill-git: #F16A50;
+  --skill-aws: #FF9900;
+  --editor-bg: #08090C;
+  --editor-header: #14161C;
+  --editor-border: #2B2D36;
+  --editor-text: #D4D4D4;
+  --editor-muted: #A0A6B3;
+  --syntax-keyword: #569CD6;
+  --syntax-property: #9CDCFE;
+  --syntax-string: #CE9178;
+  --syntax-bracket: #FFD700;
+  --window-close: #FF5F57;
+  --window-minimize: #FEBC2E;
+  --window-expand: #28C840;
+  --github-border: #2A2433;
+  --contribution-empty: #211B2C;
+  --contribution-border: #352B43;
+
+  color-scheme: dark;
+  --background: #09090B;
+  --foreground: #F5F3FF;
+  --card: #121016;
+  --card-foreground: var(--foreground);
+  --popover: #1A1623;
+  --popover-foreground: var(--foreground);
+  --primary: #8B5CF6;
+  --primary-foreground: #09090B;
+  --brand-bright: #A78BFA;
+  --ring-outer: #22D3EE;
+  --star-gold: #E8BC58;
+  --code-green: #4ADE80;
+  --secondary: #1A1623;
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --muted-foreground: #A8A3B3;
+  --accent: var(--secondary);
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #2A2433;
+  --input: var(--border);
+  --ring: var(--brand-bright);
+  --radius: 0.75rem;
+  --gradient-primary: linear-gradient(135deg, #7C3AED, #A855F7, #C084FC);
+  --chart-1: var(--primary);
+  --chart-2: var(--brand-bright);
+  --chart-3: #7C3AED;
+  --chart-4: #A855F7;
+  --chart-5: #C084FC;
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+:root:not(.dark) {
+  --skill-html: #C44822;
+  --skill-css: #0879BE;
+  --skill-javascript: #927500;
+  --skill-typescript: #3178C6;
+  --skill-react: #087E9E;
+  --skill-node: #39832E;
+  --skill-python: #3776AB;
+  --skill-postgresql: #336791;
+  --skill-git: #CD4229;
+  --skill-aws: #AC6400;
+  color-scheme: light;
+  --github-border: #E4DCEE;
+  --contribution-empty: #F0EBF7;
+  --contribution-border: #E4DCEE;
+  --background: #FAFAFF;
+  --foreground: #18181B;
+  --card: #FFFFFF;
+  --popover: #F5F3FF;
+  --primary: #7C3AED;
+  --primary-foreground: #FAFAFF;
+  --brand-bright: #9333EA;
+  --ring-outer: #0891B2;
+  --star-gold: #B58220;
+  --secondary: #F5F3FF;
+  --muted-foreground: #6B6575;
+  --gradient-primary: linear-gradient(135deg, #F5F3FF, #EDE9FE, #F3E8FF);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+
+.mobile-navigation[data-state="open"] { animation: navbar-slide-in 200ms ease-out; }
+.mobile-navigation[data-state="closed"] { animation: navbar-slide-out 150ms ease-in; }
+@keyframes navbar-slide-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes navbar-slide-out { from { transform: translateX(0); } to { transform: translateX(100%); } }
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-base text-copy-primary font-sans antialiased;
+  }
+  html {
+    @apply font-sans;
   }
 }
 
-body {
+.hero-decoration {
+  opacity: 0.65;
+
+}
+
+.hero-star {
+  color: var(--star-gold);
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--star-gold) 45%, transparent));
+}
+
+.hero-code {
+  color: var(--code-green);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--code-green) 40%, transparent);
+}
+
+@keyframes star-shimmer {
+  0%, 100% { opacity: 0.35; transform: scale(0.85); }
+  50% { opacity: 0.85; transform: scale(1.1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-decoration { animation: star-shimmer 6s ease-in-out infinite; }
+  .hero-introduction { animation: hero-enter 700ms ease-out both; }
+  .hero-profile { animation: hero-enter 900ms ease-out both; }
+  .hero-technology-ring { animation: hero-ring-spin 60s linear infinite; transform-origin: center; }
+  .hero-glow { animation: hero-glow 8s ease-in-out infinite alternate; }
+}
+
+@keyframes hero-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-glow {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.contribution-level-0 { fill: var(--contribution-empty); stroke: var(--contribution-border); stroke-width: 0.5; }
+/* Visible by default; the observer progressively enables one-time scroll reveals. */
+@media (prefers-reduced-motion: no-preference) {
+  .milestone-card { transition: opacity 600ms ease-out, transform 600ms ease-out; }
+  .milestone-row[data-reveal="pending"] .milestone-card { opacity: 0; transform: translateY(18px); }
+  .milestone-marker { transition: box-shadow 600ms ease-out, border-color 600ms ease-out; }
+  .milestone-row[data-reveal="visible"] .milestone-marker {
+    border-color: var(--primary);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--primary) 20%, transparent);
+  }
+}
+
+.contribution-level-1 { fill: color-mix(in srgb, var(--primary) 25%, var(--card)); }
+.contribution-level-2 { fill: color-mix(in srgb, var(--primary) 50%, var(--card)); }
+.contribution-level-3 { fill: color-mix(in srgb, var(--primary) 75%, var(--card)); }
+.contribution-level-4 { fill: var(--primary); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .about-enter { animation: hero-enter 700ms ease-out both; }
+  .service-enter { animation: hero-enter 600ms ease-out both; }
+}
+
+/* Extend the solid About background beyond the content container without overflow. */
+.about-section {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 0 100vmax var(--background);
+  clip-path: inset(0 -100vmax);
+}
+
+.skills-marquee {
+  background-image: radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--primary) 8%, transparent), transparent 70%);
+}
+
+/* Each list includes its trailing gap, so half the track is exactly one repeat. */
+@keyframes skills-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skills-track { animation: skills-scroll 80s linear infinite; }
+  .skills-marquee:hover .skills-track { animation-play-state: paused; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-track { width: 100%; }
+  .skills-list { width: 100%; flex-wrap: wrap; justify-content: center; padding-right: 0; }
+  .skills-list[aria-hidden="true"] { display: none; }
+}
+
+.project-filter[data-state="active"] {
+  background: linear-gradient(135deg, var(--primary), var(--brand-bright));
+  color: var(--primary-foreground);
+  border-color: transparent;
+}
+.project-pill { color: var(--pill-color); background: color-mix(in srgb, var(--pill-color) 12%, var(--card)); }
+.project-pill[data-color="violet"] { --pill-color: var(--brand-bright); }
+.project-pill[data-color="cyan"] { --pill-color: var(--skill-react); }
+.project-pill[data-color="blue"] { --pill-color: var(--skill-postgresql); }
+.project-pill[data-color="green"] { --pill-color: var(--skill-node); }
+.project-pill[data-color="amber"] { --pill-color: var(--skill-aws); }
+.project-pill[data-color="rose"] { --pill-color: var(--skill-git); }
+@media (prefers-reduced-motion: no-preference) {
+  .project-enter { animation: hero-enter 300ms ease-out both; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .project-photo { transition: opacity 700ms ease-in-out; }
+  .project-detail-enter { animation: hero-enter 350ms ease-out both; }
+}
+
+/* Keep wheel, touch, and keyboard scrolling while hiding the modal scrollbar. */
+.project-detail-scroll { scrollbar-width: none; }
+.project-detail-scroll::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .contact-enter { animation: hero-enter 450ms ease-out both; }
 }
