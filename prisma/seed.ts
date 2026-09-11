@@ -294,7 +294,7 @@ published: true,
     // Add NOVA robot photos / architecture screenshots here
   ],
 
-  videoUrl: "https://uploadthing.com/dashboard/icy9989-personal-team/h8enu23e0g/files",
+  videoUrl: "https://h8enu23e0g.ufs.sh/f/MG5w6DTX3B8ajQ7jUZGc6IJDEltWV52Fmr4BCwLhgeORTbyA",
 
   githubUrl: null,
   liveUrl: null,
