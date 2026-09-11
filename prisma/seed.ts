@@ -6,6 +6,86 @@ loadEnvConfig(process.cwd());
 const projects = [
 
   {
+    id: "16",
+  slug: "ghost-ai",
+  title: "Ghost AI",
+
+  shortDescription:
+    "A collaborative AI workspace that transforms natural-language system requirements into editable architecture diagrams and technical specifications.",
+
+  description:
+    "Ghost AI is a real-time collaborative system design workspace for creating, exploring, and documenting software architectures. Users describe a system in plain language, and an AI workflow generates a structured architecture on a shared canvas using nodes and relationships. The canvas supports real-time collaboration, live cursors, presence indicators, starter architecture templates, and direct editing through React Flow. Once the design is complete, Ghost AI converts the canvas graph into a technical Markdown specification that can be reviewed and downloaded. The application combines authenticated project management, shared real-time state, durable background workflows, structured AI output, and persistent artifact storage into one end-to-end architecture design tool.",
+
+  category: ProjectCategory.AI_ML,
+
+  technologies: [
+    "TypeScript",
+    "Next.js",
+    "React",
+    "Clerk",
+    "Liveblocks",
+    "React Flow",
+    "Prisma",
+    "PostgreSQL",
+    "Trigger.dev",
+    "Vercel Blob",
+    "AI",
+  ],
+
+  features: [
+    "Natural-language system architecture generation",
+    "Collaborative real-time architecture canvas",
+    "Live cursors and collaborator presence",
+    "Node and edge editing with React Flow",
+    "Authenticated project creation and ownership",
+    "Collaborator access by verified email address",
+    "Starter system design templates",
+    "Microservices, monolith, event-driven, and serverless templates",
+    "Durable background AI workflows",
+    "Structured AI-generated canvas nodes and relationships",
+    "Markdown technical specification generation",
+    "Persistent canvas snapshots stored in Vercel Blob",
+    "Project metadata stored with Prisma and PostgreSQL",
+    "Owner-only project rename and deletion",
+    "Membership-checked editor routes",
+  ],
+
+  lessonsLearned: [
+    "AI-generated architecture should be represented as validated structured data before it is written into a shared canvas.",
+    "Real-time collaboration requires a clear separation between durable project metadata and ephemeral shared canvas state.",
+    "Authentication and authorization must be enforced independently at the page, API, and collaboration boundaries.",
+    "Durable background workflows are better suited to long-running AI generation than request handlers.",
+    "Large canvas artifacts should be stored outside the relational database while keeping only stable references in Prisma.",
+    "Explicit project ownership and collaborator checks prevent shared workspace features from becoming accidental access-control boundaries.",
+    "Starter templates provide a predictable fallback when users need to begin with a proven architecture pattern.",
+  ],
+
+  challenge:
+    "Designing a collaborative architecture workspace requires coordinating several difficult boundaries at once: authenticated project access, real-time shared state, editable graph data, AI-generated structures, durable background execution, and persistent artifacts. AI output can be incomplete or structurally invalid, while canvas data must remain consistent for every collaborator. The system also needs to distinguish project ownership, collaborator access, and private persisted data without slowing down the editing experience.",
+
+  solution:
+    "Ghost AI separates each responsibility into a dedicated layer. Clerk handles identity, Prisma and PostgreSQL store project metadata and relationships, Liveblocks manages real-time collaboration, React Flow renders the architecture graph, and Vercel Blob stores canvas snapshots and generated specifications. AI generation runs through durable Trigger.dev workflows and returns structured architecture data that can be written into the shared room. Route-level authorization, owner checks, verified-email collaboration, input validation, and explicit storage boundaries keep the workspace predictable while allowing multiple users to design together.",
+
+  thumbnail: "/ghost-ai-preview.png",
+
+  images: [],
+
+  videoUrl: null,
+
+  githubUrl: "https://github.com/icy9989/Ghost-AI.git",
+
+  liveUrl: null,
+
+  uptime: null,
+  loadTime: null,
+  performanceScore: null,
+  deploymentStatus: null,
+
+  featured: true,
+  published: true,
+},
+
+  {
     id: "15",
     slug: "mini-orchestrator",
     title: "Mini Orchestrator",
