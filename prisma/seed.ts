@@ -290,10 +290,6 @@ published: true,
 
   thumbnail: "/nova-preview.png",
 
-  images: [
-    // Add NOVA robot photos / architecture screenshots here
-  ],
-
   videoUrl: "https://h8enu23e0g.ufs.sh/f/MG5w6DTX3B8ajQ7jUZGc6IJDEltWV52Fmr4BCwLhgeORTbyA",
 
   githubUrl: null,
