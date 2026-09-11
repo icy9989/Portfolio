@@ -5,6 +5,79 @@ loadEnvConfig(process.cwd());
 
 const projects = [
 
+  {
+    id: "15",
+    slug: "mini-orchestrator",
+    title: "Mini Orchestrator",
+
+    shortDescription:
+      "A custom AI agent orchestration system that analyzes uploaded datasets with local language models while deterministically verifying every factual claim against computed statistics.",
+
+    description:
+      "Mini Orchestrator is a hand-built AI agent orchestration system designed to explore CSV and Excel datasets using a local, open-weight language model without relying on an agent SDK. The system coordinates specialized agents through a router-driven workflow, where an analyst computes dataset statistics, a selector identifies meaningful columns, and a narrator generates a structured report. Rather than trusting model-generated conclusions directly, every factual claim is validated against deterministic ground-truth statistics before it reaches the dashboard. The orchestration layer also enforces iteration limits, completion gates, structured data flow, and failure handling to prevent unreliable model behavior from silently producing incorrect results. The project demonstrates how deterministic software engineering can be combined with local LLMs to build more reliable, traceable, and verifiable AI systems.",
+
+    category: ProjectCategory.AI_ML,
+
+    technologies: [
+      "Python",
+      "LLM",
+      "LM Studio",
+      "gpt-oss-20b",
+      "Data Analysis",
+      "Agent Orchestration",
+    ],
+
+    features: [
+      "Custom agent orchestration without an agent SDK",
+      "Router-based specialist coordination",
+      "CSV and Excel dataset analysis",
+      "Analyst, selector, and narrator agent workflow",
+      "Deterministic factual claim verification",
+      "Ground-truth statistics computed outside the language model",
+      "Automatic detection and flagging of invalid statistical citations",
+      "Iteration limits and deterministic completion gates",
+      "Structured context transfer between specialist agents",
+      "Local open-weight LLM integration through LM Studio",
+      "Chart generation and analytical reporting",
+      "Traceable agent execution dashboard",
+    ],
+
+    lessonsLearned: [
+      "LLM output should not be treated as ground truth when factual results can be verified deterministically.",
+      "Agent state and specialist outputs should be passed explicitly rather than relying on the model to preserve context.",
+      "Structured model output can still be malformed or subtly corrupted and requires validation.",
+      "Large non-text payloads should be separated from model context to avoid unnecessary context-window usage.",
+      "Deterministic stopping conditions make agent loops safer and more predictable.",
+      "Smaller local models require stronger orchestration, validation, and failure-handling mechanisms.",
+    ],
+
+    challenge:
+      "Small local language models can produce plausible but unreliable behavior, including malformed tool calls, corrupted structured output, invalid citation paths, lost context between specialists, and premature completion claims. Large payloads such as chart image data can also consume the model's limited context window and interfere with the orchestration process.",
+
+    solution:
+      "The system separates model reasoning from deterministic control. Ground-truth statistics come directly from computation rather than model-generated copies, specialist outputs are explicitly injected into subsequent steps, and unnecessary binary data is removed before reaching the model. A deterministic verifier resolves each reported claim against the real statistics and flags claims whose references cannot be validated. Iteration caps and completion gates independently control when the orchestration loop is allowed to finish.",
+
+    thumbnail: "/mini-orchestrator-preview.png",
+
+    videoUrl: "https://h8enu23e0g.ufs.sh/f/MG5w6DTX3B8a0jPOTjMHQuIcr5LwtZsfAnKbe861MFpjUT9l",
+
+    githubUrl:
+      "https://github.com/icy9989/mini-orchestrator.git",
+
+    liveUrl: null,
+
+    uptime: null,
+    loadTime: null,
+    performanceScore: null,
+    deploymentStatus: null,
+
+    featured: true,
+    published: true,
+
+  },
+
+  
+
   // =========================================================
   // 10. GOODS PROFIT
   // =========================================================
