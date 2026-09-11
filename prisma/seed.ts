@@ -5,7 +5,7 @@ loadEnvConfig(process.cwd());
 
 const projects = [
 
-  {
+{
 id: "17",
 slug: "signalflow",
 title: "SignalFlow",
@@ -68,7 +68,7 @@ thumbnail: "/signalflow-preview.png",
 images: [],
 videoUrl: null,
 githubUrl: "https://github.com/icy9989/signal-flow.git",
-liveUrl: null,
+liveUrl: 'https://signal-flow-delta.vercel.app',
 uptime: "99.96",
 loadTime: "1.3",
 performanceScore: "94",
@@ -227,6 +227,87 @@ published: true,
     published: true,
 
   },
+
+  {
+    id: "14",
+  slug: "nova-neurally-operated-virtual-assistant",
+  title: "NOVA: Neurally Operated Virtual Assistant",
+
+  shortDescription:
+    "A modular edge-AI robotics platform that combines real-time local perception and movement with server-side LLM reasoning for voice, vision, and autonomous interaction.",
+
+  description:
+    "NOVA (Neurally Operated Virtual Assistant) is a modular edge-server robotics framework developed as a senior capstone project. The system combines real-time sensing and physical control on local hardware with higher-level AI reasoning through a server layer. A Raspberry Pi handles camera and microphone input, command routing, computer vision, and time-sensitive decisions, while an Arduino controls motors, servos, and physical actuation. For more computationally intensive reasoning, selected context is sent to an IBM-hosted server that uses OpenAI API inference before returning a response to the robot. The physical prototype demonstrates multimodal interaction through voice commands, visual perception, movement control, camera tracking, follow-me behavior, and server-assisted reasoning.",
+
+  category: ProjectCategory.ROBOTICS,
+
+  technologies: [
+    "Raspberry Pi 5",
+    "Arduino Uno",
+    "OpenAI API",
+    "IBM Cloud",
+    "YOLO v11",
+    "Whisper",
+    "Piper TTS",
+    "Computer Vision",
+    "Speech Recognition",
+    "Edge AI",
+    "LLM",
+    "Serial Communication",
+  ],
+
+  features: [
+    "Hybrid edge-server robotics architecture",
+    "Real-time computer vision with YOLO v11",
+    "Voice command recognition with Whisper STT",
+    "Text-to-speech output with Piper TTS",
+    "Server-side LLM reasoning using OpenAI API",
+    "Local command routing on Raspberry Pi",
+    "Arduino-based motor and servo control",
+    "Forward, backward, left, right, and stop movement",
+    "U-turn and 360-degree rotation",
+    "Servo-based camera tracking",
+    "Time and distance-based movement commands",
+    "Prototype follow-me behavior",
+    "Multimodal voice and visual interaction",
+    "Edge-to-server communication",
+  ],
+
+  lessonsLearned: [
+    "Designed a layered robotics architecture that separates high-level intelligence from low-level hardware control.",
+    "Integrated edge computing with server-side AI reasoning to balance responsiveness and computational capability.",
+    "Built communication between Raspberry Pi and Arduino for reliable physical actuation.",
+    "Worked with real-time computer vision and speech interfaces in a physical robotics environment.",
+    "Learned how hardware constraints, latency, power delivery, and environmental conditions affect autonomous systems.",
+    "Used calibration and repeated testing to improve movement consistency when precise encoder feedback was unavailable.",
+  ],
+
+  challenge:
+    "The main challenge was balancing real-time robot responsiveness with the computational requirements of computer vision and higher-level AI reasoning. The prototype also had to deal with limited movement precision from standard DC motors, the absence of encoder-based position feedback, environmental differences such as floor friction, and the complexity of coordinating sensing, reasoning, communication, and physical actuation across multiple hardware layers.",
+
+  solution:
+    "NOVA uses a layered edge-server architecture to separate responsibilities. Time-sensitive sensing, command routing, computer vision, and movement decisions remain on the Raspberry Pi, while heavier language-model reasoning is offloaded to an IBM-hosted server. An Arduino provides a dedicated actuation layer that converts serial commands into motor and servo behavior. Movement consistency is improved through time-based control and repeated calibration across different surfaces and power conditions, while the modular architecture keeps perception, reasoning, and hardware control independently manageable.",
+
+  thumbnail: "/nova-preview.png",
+
+  images: [
+    // Add NOVA robot photos / architecture screenshots here
+  ],
+
+  videoUrl: "https://uploadthing.com/dashboard/icy9989-personal-team/h8enu23e0g/files",
+
+  githubUrl: null,
+  liveUrl: null,
+
+  uptime: null,
+  loadTime: null,
+  performanceScore: null,
+  deploymentStatus: "Prototype Completed",
+
+  featured: true,
+  published: true,
+
+},
 
   
 
